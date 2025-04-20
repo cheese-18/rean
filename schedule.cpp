@@ -3,9 +3,14 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <limits>
 
 using namespace std;
-
+void pauseS() {
+    cout << "\nPress Enter to continue...";
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.get();
+}
 void Schedule::addClass(const string& name, const string& time, const string& day) {
     for (const auto& c : classes) {
         if (c.day == day && c.time == time) {
@@ -15,6 +20,7 @@ void Schedule::addClass(const string& name, const string& time, const string& da
     }
     classes.push_back({name, time, day});
     cout << "Class " << name << " added successfully.\n";
+    pauseS();
 }
 
 void Schedule::removeClass(const string& name) {
@@ -27,6 +33,7 @@ void Schedule::removeClass(const string& name) {
     } else {
         cout << "Class " << name << " not found.\n";
 }
+pauseS();
 
     }
 void Schedule::viewClasses() const {
@@ -38,4 +45,5 @@ void Schedule::viewClasses() const {
     for (const auto& c : classes) {
         cout << c.name << " - " << c.time << " on " << c.day << "\n";
     }
+    pauseS();
 }

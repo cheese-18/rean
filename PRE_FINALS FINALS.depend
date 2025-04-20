@@ -9,12 +9,13 @@
 	<string>
 	<vector>
 
-1745130801 source:c:\users\rean\documents\codes\pre_finals finals\pre_finals finals\schedule.cpp
+1745163577 source:c:\users\rean\documents\codes\pre_finals finals\pre_finals finals\schedule.cpp
 	"include/schedule.h"
 	<iostream>
 	<vector>
 	<string>
 	<algorithm>
+	<limits>
 
 1745130801 c:\users\rean\documents\codes\pre_finals finals\pre_finals finals\include\schedule.h
 	<string>
@@ -45,10 +46,11 @@
 	<string>
 	<vector>
 
-1745132744 source:c:\users\rean\documents\codes\pre_finals finals\pre_finals finals\main.cpp
+1745163529 source:c:\users\rean\documents\codes\pre_finals finals\pre_finals finals\main.cpp
 	<iostream>
+	<limits>
+	<windows.h>
 	"include/student.h"
 	"include/schedule.h"
 	"include/assignment.h"
-	<windows.h>
 

@@ -79,6 +79,54 @@ void manageAssignments(Student& student) {
         pause();
     } while (subChoice != 5);
 }
+void manageSchedule(Schedule& schedule) {
+    int scheduleChoice;
+    do {
+        system("cls"); // Clear screen each loop
+        cout << "\nSchedule Menu:\n";
+        cout << "1. Add Class\n";
+        cout << "2. View Classes\n";
+        cout << "3. Remove Class\n";
+        cout << "4. Back to Main Menu\n";
+        cout << "Enter your choice: ";
+        cin >> scheduleChoice;
+        cin.ignore();
+
+        switch (scheduleChoice) {
+            case 1: {
+                string className, time, day;
+                cout << "Enter class name: ";
+                getline(cin, className);
+                cout << "Enter class time: ";
+                getline(cin, time);
+                cout << "Enter class day: ";
+                getline(cin, day);
+                schedule.addClass(className, time, day);
+                system("pause");
+                break;
+            }
+            case 2:
+                schedule.viewClasses();
+                system("pause");
+                break;
+            case 3: {
+                string className;
+                cout << "Enter class name to remove: ";
+                getline(cin, className);
+                schedule.removeClass(className);
+                system("pause");
+                break;
+            }
+            case 4:
+                cout << "Returning to main menu...\n";
+                Sleep(1000);
+                break;
+            default:
+                cout << "Invalid choice.\n";
+                system("pause");
+        }
+    } while (scheduleChoice != 4);
+}
 
 // Main program
 int main() {
@@ -110,18 +158,8 @@ int main() {
             case 1:
                 manageAssignments(student);
                 break;
-            case 2: {
-                string className, time, day;
-                cout << "Enter class name: ";
-                getline(cin, className);
-                cout << "Enter class time: ";
-                getline(cin, time);
-                cout << "Enter class day: ";
-                getline(cin, day);
-                schedule.addClass(className, time, day);
-                pause();
-                break;
-            }
+            case 2:
+                manageSchedule(schedule);
             case 3:
                 cout << "\n=== Student Information ===\n";
                 cout << "Name: " << student.name << "\n";
