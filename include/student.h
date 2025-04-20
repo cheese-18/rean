@@ -5,17 +5,19 @@
 #include <vector>
 #include "assignment.h"
 
+using namespace std;
+
 class Student {
 public:
-    std::string name;
-    std::string studentID;
-    std::vector<Assignment> assignments;
+    string name;
+    string studentID;
+    vector<Assignment> assignments;
 
 public:
-    Student(const std::string& name, const std::string& studentID);
+    Student(const string& name, const string& studentID);
 
     void addAssignment(const Assignment& assignment);
-    void removeAssignment(const std::string& assignmentTitle);
+    void removeAssignment(const string& assignmentTitle);
     void viewAssignments() const;
 };
 

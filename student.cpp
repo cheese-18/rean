@@ -2,25 +2,27 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <algorithm> // for std::remove_if
+#include <algorithm>
 
-Student::Student(const std::string& name, const std::string& studentID)
+using namespace std;
+
+Student::Student(const string& name, const string& studentID)
     : name(name), studentID(studentID) {}
 
 void Student::addAssignment(const Assignment& assignment) {
     assignments.push_back(assignment);
 }
 
-void Student::removeAssignment(const std::string& title) {
-    assignments.erase(std::remove_if(assignments.begin(), assignments.end(),
+void Student::removeAssignment(const string& title) {
+    assignments.erase(remove_if(assignments.begin(), assignments.end(),
         [&title](const Assignment& a) { return a.getTitle() == title; }),
         assignments.end());
 }
 
 void Student::viewAssignments() const {
-    std::cout << "Assignments for " << name << " (ID: " << studentID << "):\n";
+    cout << "Assignments for " << name << " (ID: " << studentID << "):\n";
     for (const auto& assignment : assignments) {
-        std::cout << "- " << assignment.getTitle() << " (Due: " << assignment.getDueDate()
+        cout << "- " << assignment.getTitle() << " (Due: " << assignment.getDueDate()
                  << ") [Status: " << (assignment.isCompleted() ? "Completed" : "Pending") << "]\n";
     }
 }

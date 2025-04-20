@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1745130801 source:c:\users\rean\documents\codes\pre_finals finals\pre_finals finals\assignment.cpp
+	"include/assignment.h"
+	<iostream>
+	<vector>
+	<string>
+
+1745130801 c:\users\rean\documents\codes\pre_finals finals\pre_finals finals\include\assignment.h
+	<string>
+	<vector>
+
+1745130801 source:c:\users\rean\documents\codes\pre_finals finals\pre_finals finals\schedule.cpp
+	"include/schedule.h"
+	<iostream>
+	<vector>
+	<string>
+	<algorithm>
+
+1745130801 c:\users\rean\documents\codes\pre_finals finals\pre_finals finals\include\schedule.h
+	<string>
+	<vector>
+
+1745130801 source:c:\users\rean\documents\codes\pre_finals finals\pre_finals finals\student.cpp
+	"include/student.h"
+	<iostream>
+	<vector>
+	<string>
+	<algorithm>
+
+1745130801 c:\users\rean\documents\codes\pre_finals finals\pre_finals finals\include\student.h
+	<string>
+	<vector>
+	"assignment.h"
+
+1745130801 source:c:\users\rean\documents\codes\pre_finals finals\pre_finals finals\utils\helper.cpp
+	"helper.h"
+	<iostream>
+	<sstream>
+	<ctime>
+	<algorithm>
+	<cctype>
+	<iomanip>
+
+1745130801 c:\users\rean\documents\codes\pre_finals finals\pre_finals finals\utils\helper.h
+	<string>
+	<vector>
+

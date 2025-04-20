@@ -4,19 +4,21 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class Schedule {
 public:
-    void addClass(const std::string& className, const std::string& time, const std::string& day);
-    void removeClass(const std::string& className);
+    void addClass(const string& className, const string& time, const string& day);
+    void removeClass(const string& className);
     void viewClasses() const;
 
 private:
     struct Class {
-        std::string name;
-        std::string time;
-        std::string day;
+        string name;
+        string time;
+        string day;
     };
-    std::vector<Class> classes;
+    vector<Class> classes;
 };
 
 #endif // SCHEDULE_H
