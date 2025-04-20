@@ -1,13 +1,29 @@
 #include <iostream>
+#include <limits>
+#include <windows.h>
 #include "include/student.h"
 #include "include/schedule.h"
 #include "include/assignment.h"
-#include <windows.h>
+
 using namespace std;
 
+// Clear the screen (Windows-specific)
+void clearScreen() {
+    system("cls");
+}
+
+// Pause and wait for Enter key
+void pause() {
+    cout << "\nPress Enter to continue...";
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.get();
+}
+
+// Assignment manager menu
 void manageAssignments(Student& student) {
     int subChoice;
     do {
+        clearScreen();
         cout << "\nAssignment Menu:\n";
         cout << "1. Add Assignment\n";
         cout << "2. View Assignments\n";
@@ -16,15 +32,14 @@ void manageAssignments(Student& student) {
         cout << "5. Back to Main Menu\n";
         cout << "Enter your choice: ";
         cin >> subChoice;
-        cin.ignore();
-
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clean buffer
 
         switch (subChoice) {
             case 1: {
                 string title, dueDate;
                 cout << "Enter assignment title: ";
                 getline(cin, title);
-                cout << "Enter due date: ";
+                cout << "Enter due date (YYYY-MM-DD): ";
                 getline(cin, dueDate);
                 Assignment newAssignment(title, dueDate);
                 student.addAssignment(newAssignment);
@@ -35,6 +50,8 @@ void manageAssignments(Student& student) {
                 break;
             case 3: {
                 string title;
+                student.viewAssignments();
+                cout << endl;
                 cout << "Enter assignment title to mark as completed: ";
                 getline(cin, title);
                 for (auto& assignment : student.assignments) {
@@ -59,12 +76,13 @@ void manageAssignments(Student& student) {
             default:
                 cout << "Invalid choice.\n";
         }
-        system("cls");
+        pause();
     } while (subChoice != 5);
 }
 
-
+// Main program
 int main() {
+    clearScreen();
     cout << "Welcome to the Student Management System!" << endl;
 
     string name, studentID;
@@ -78,6 +96,7 @@ int main() {
 
     int choice;
     do {
+        clearScreen();
         cout << "\nMain Menu:\n";
         cout << "1. Manage Assignments\n";
         cout << "2. Manage Schedule\n";
@@ -85,7 +104,7 @@ int main() {
         cout << "4. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
-        cin.ignore();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // clean buffer
 
         switch (choice) {
             case 1:
@@ -100,19 +119,24 @@ int main() {
                 cout << "Enter class day: ";
                 getline(cin, day);
                 schedule.addClass(className, time, day);
+                pause();
                 break;
             }
             case 3:
-                cout << "\nStudent Name: " << student.name << "\n"
-                          << "Student ID: " << student.studentID << "\n";
+                cout << "\n=== Student Information ===\n";
+                cout << "Name: " << student.name << "\n";
+                cout << "Student ID: " << student.studentID << "\n";
                 student.viewAssignments();
+                pause();
                 break;
             case 4:
                 cout << "Goodbye!\n";
                 break;
             default:
                 cout << "Invalid choice.\n";
+                pause();
         }
+
     } while (choice != 4);
 
     return 0;
