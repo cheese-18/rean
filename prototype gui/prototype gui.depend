@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1746102738 source:c:\users\rean\documents\codes\pre_finals finals\prototype gui\main.cpp
+	<string>
+
+1746102684 source:c:\users\rean\documents\codes\pre_finals finals\prototype gui\type 2.cpp
+	<windows.h>
+	<string>
+
