@@ -2,7 +2,10 @@
 1746102738 source:c:\users\rean\documents\codes\pre_finals finals\prototype gui\main.cpp
 	<string>
 
-1746102684 source:c:\users\rean\documents\codes\pre_finals finals\prototype gui\type 2.cpp
+1746367296 source:c:\users\rean\documents\codes\pre_finals finals\prototype gui\type 2.cpp
 	<windows.h>
 	<string>
+	<fstream>
+	<vector>
+	<sstream>
 
